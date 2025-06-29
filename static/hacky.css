@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Open Sans", Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: #00509e;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+  }
+  
+  .auth-buttons {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  .auth-buttons a {
+    text-decoration: none;
+    color: white;
+    background-color: #003f7f;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .auth-buttons a:hover {
+    background-color: #001f4f;
+  }
+  
+  nav {
+    background: #003f7f;
+    padding: 0.8rem;
+    text-align: center;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .hero {
+    background-image: url("https://i.pinimg.com/originals/c6/ad/2e/c6ad2ec1fbc13a378d668b5c58a427ed.gif"); /* Replace with the URL of your GIF */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 5rem 1rem;
+    color: white;
+}
+
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .content {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .jobs-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-between;
+  }
+  
+  .job-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    flex: 1 1 calc(33% - 1rem);
+    min-width: 250px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .job-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .job-card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .job-card a {
+    text-decoration: none;
+    color: white;
+    background: #00509e;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+  
+  .job-card a:hover {
+    background: #003f7f;
+  }
+  
+  footer {
+    text-align: center;
+    background-color: #00509e;
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  footer p {
+    font-size: 0.9rem;
+  }
+  
+  /* Volume Button */
+  .volume-btn {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background-color: #003f7f;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+  }
+  
+  .volume-btn:hover {
+    background-color: #001f4f;
+  }
+  .social-services-section {
+    background-color: #eaf2f8;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+  }
+  
+  .social-services-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .service-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .service-card p {
+    font-size: 1rem;
+  }
+  
+  .service-card a {
+    text-decoration: none;
+    color: #00509e;
+    font-weight: bold;
+  }
+  
+  .service-card a:hover {
+    text-decoration: underline;
+  }
+  /* Resume Builder Section */
+#resume-builder {
+    background-color: #eaf2f8;  /* Light background for the resume section */
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+#resume-builder h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #003f7f;  /* Matching primary color */
+}
+
+#resume-builder p {
+    font-size: 1.2rem;
+    color: #666;  /* Text color that contrasts well with the background */
+    margin-bottom: 1.5rem;
+}
+
+.resume-image img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;  /* Rounded corners to match card style */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+}
+
+.build-resume-btn {
+    background-color: #00509e;  /* Primary color for consistency */
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.build-resume-btn:hover {
+    background-color: #003f7f;  /* Darker shade for hover effect */
+}
+
+.build-resume-btn:focus {
+    outline: none;
+}
+#logout-btn {
+  background-color: #4B4CC6; /* Set the background color to blue */
+  color: white; /* Set the text color to white */
+  border: none; /* Remove the border */
+  border-radius: 5px; /* Add rounded corners */
+  padding: 10px 20px; /* Add padding for size */
+  font-size: 16px; /* Set font size */
+  font-weight: bold; /* Make the text bold */
+  cursor: pointer; /* Change the cursor to pointer on hover */
+  display: inline-block; /* Ensure proper button layout */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+#logout-btn:hover {
+  background-color: #3B3BB6; /* Slightly darker shade on hover */
+}

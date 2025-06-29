@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inclusive and accessible job opportunities for everyone">
+    <title>Inclusive Job Opportunities</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+        }
+
+        header nav p {
+            margin-right: 1rem;
+        }
+
+        header nav button {
+            background-color: white;
+            color: #0073e6;
+            border: 1px solid white;
+            padding: 5px 10px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        header nav button:hover {
+            background-color: #005bb5;
+            color: white;
+        }
+
+        .volume-btn {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            background-color: #00509E;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+            z-index: 1000;
+        }
+
+        .volume-btn:hover {
+            background-color: #003F7F;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .hero {
+            background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/952bf0155039839.634d7f2192fb1.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 5rem 1rem;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .job-listing {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .job-listing:hover {
+            background-color: #f0f8ff;
+            transform: scale(1.02);
+        }
+
+        .job-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            min-width: 250px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .job-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .job-card p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #0073e6;
+            color: white;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <button class="volume-btn" onclick="toggleReading()">🔊 Read All Text</button>
+
+    <header>
+        <h1>Inclusive Job Opportunities</h1>
+        <nav>
+            <p id="welcomeMessage"></p>
+            <div id="loginButtons">
+                <button onclick="window.location.href='login.html'">Login</button>
+                <button onclick="window.location.href='signup.html'">Sign Up</button>
+            </div>
+            <button id="logoutButton" onclick="logout()" style="display: none;">Logout</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Empowering Everyone</h2>
+        <p id="hero-text">Find jobs that suit your skills and preferences, and take the first step toward financial independence.</p>
+    </section>
+
+    <main>
+        <section>
+            <h2>Featured Job Openings</h2>
+            <div class="job-listing" onclick="checkLogin()">
+                <h3>Data Entry Clerk</h3>
+                <p>For candidates with basic computer knowledge.</p>
+            </div>
+            <div class="job-listing" onclick="checkLogin()">
+                <h3>Customer Support Associate</h3>
+                <p>Ideal for those with good communication skills.</p>
+            </div>
+            <div class="job-listing" onclick="checkLogin()">
+                <h3>Warehouse Assistant</h3>
+                <p>Physical work, no prior experience needed.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Inclusive Jobs Platform. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const isLoggedIn = localStorage.getItem("isLoggedIn");
+            const currentUser = localStorage.getItem("currentUser");
+
+            const loginButtons = document.getElementById("loginButtons");
+            const logoutButton = document.getElementById("logoutButton");
+            const welcomeMessage = document.getElementById("welcomeMessage");
+
+            if (isLoggedIn === "true" && currentUser) {
+                welcomeMessage.textContent = Welcome, ${currentUser}!;
+                loginButtons.style.display = "none";
+                logoutButton.style.display = "block";
+            } else {
+
+                loginButtons.style.display = "flex";
+                logoutButton.style.display = "none";
+            }
+        });
+
+        function checkLogin() {
+            const isLoggedIn = localStorage.getItem("isLoggedIn");
+            if (isLoggedIn !== "true") {
+                alert("Please login or sign up to access this feature.");
+                window.location.href = "login.html";
+            }
+        }
+
+        function logout() {
+            localStorage.setItem("isLoggedIn", "false");
+            localStorage.removeItem("currentUser");
+            alert("You have been logged out.");
+            window.location.href = "hacky.html";
+        }
+
+        let speaking = false;
+
+        function toggleReading() {
+            if (speaking) {
+                window.speechSynthesis.cancel();
+                speaking = false;
+            } else {
+                const text = document.body.innerText;
+                const speech = new SpeechSynthesisUtterance(text);
+                speech.lang = 'en-US';
+                speech.onend = () => speaking = false;
+                window.speechSynthesis.speak(speech);
+                speaking = true;
+            }
+        }
+    </script>
+</body>
+</html>

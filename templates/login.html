@@ -17,7 +17,7 @@
             if (storedUser && storedUser.password === password) {
                 localStorage.setItem("isLoggedIn", "true");
                 alert("Login successful!");
-                window.location.href = "{{ url_for('templates', filename='hacky.html')}}";
+                window.location.href = "{{ url_for('hacky')}}";
             } else {
                 alert("Invalid username or password!");
             }
@@ -37,7 +37,7 @@
             <input type="password" id="password" name="password" required>
             
             <button type="submit">Login</button>
-            <p>Don't have an account? <a href="{{ url_for('templates', filename='signup.html')}}">Sign Up</a></p>
+            <p>Don't have an account? <a href="{{ url_for('signup')}}">Sign Up</a></p>
         </form>
     </main>
     <footer>

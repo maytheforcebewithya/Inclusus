@@ -17,16 +17,16 @@
         communities to meaningful employment opportunities
       </p>
       <div class="auth-buttons">
-        <a href="login.html">Login</a>
-        <a href="signup.html">Sign Up</a>
+        <a href="{{ url_for('templates', filename='login.html')}}">Login</a>
+        <a href="{{ url_for('templates', filename='signup.html')}}">Sign Up</a>
       </div>
     </header>
     <nav>
-        <a href="hacky.html">Home</a>
+        <a href="{{ url_for('templates', filename='hacky.html')}}">Home</a>
         <a href="#jobs">Jobs</a>
         <a href="#Contact Us">Contact Us</a>
-        <a href="assistance.html">Assisstance Programs</a>
-        <a href="courses.html">Courses</a>
+        <a href="{{ url_for('templates', filename='assistance.html')}}">Assisstance Programs</a>
+        <a href="{{ url_for('templates', filename='courses.html')}}">Courses</a>
       </nav>
     <style>
        .job-card {

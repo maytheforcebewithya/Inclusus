@@ -26,7 +26,9 @@ USER appuser
 # CMD ["python", "app.py"]
 # Use the official Python image as the base
 # Install dependencies
-RUN pip install --upgrade pip flask flask_cors
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
 # Expose the port the app runs on
 EXPOSE 5501

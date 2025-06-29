@@ -367,7 +367,7 @@ document.getElementById('resume-form').addEventListener('submit', (e) => {
         missingSkillsMessage.innerHTML = `
             <p>You are missing the following skills for this job:</p>
             <ul>${missingSkills.map(skill => `<li>${skill}</li>`).join('')}</ul>
-            <p>We recommend visiting the <a href="courses.html">Courses</a> section to acquire these skills.</p>
+            <p>We recommend visiting the <a href="{{ url_for('templates', filename='courses.html')}}">Courses</a> section to acquire these skills.</p>
         `;
     } else {
         // If no skills are missing, show a success message

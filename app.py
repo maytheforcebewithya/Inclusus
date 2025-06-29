@@ -114,9 +114,9 @@ jobs = [
     }
 ]
 
-@app.route('/api/v1/job/getjobs', methods=['GET'])
-def get_jobs():
-    return jsonify(jobs)
+# @app.route('/api/v1/job/getjobs', methods=['GET'])
+# def get_jobs():
+ #   return jsonify(jobs)
 
 @app.route("/")
 def home():

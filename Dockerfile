@@ -10,28 +10,22 @@ RUN addgroup --system appgroup && adduser --system --ingroup appgroup appuser
 # Set working dir
 WORKDIR /app
 
-# Copy files
+# Copy project files
 COPY . /app
 
-# Change ownership (optional but good practice)
+# Copy requirements first and install deps as ROOT (default)
+COPY requirements.txt .
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt
+
+# Change ownership of /app for the non-root user
 RUN chown -R appuser:appgroup /app
 
-# Switch to non-root user
+# Switch to non-root user AFTER dependencies are installed
 USER appuser
 
-# Example: install requirements if you have requirements.txt
-# RUN pip install -r requirements.txt
-
-# Example: set CMD to run your Flask app
-# CMD ["python", "app.py"]
-# Use the official Python image as the base
-# Install dependencies
-
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-# Expose the port the app runs on
+# Expose port
 EXPOSE 5501
 
-# Define the command to run the application
+# Command to run app
 CMD ["python", "app.py"]

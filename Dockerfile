@@ -1,16 +1,30 @@
-# Use the official Python image as the base
 FROM python:3.10-slim
 
-# Set environment variables
+# Set env vars
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Set the working directory
+# Create non-root user
+RUN addgroup --system appgroup && adduser --system --ingroup appgroup appuser
+
+# Set working dir
 WORKDIR /app
 
-# Copy the current directory contents into the container
+# Copy files
 COPY . /app
 
+# Change ownership (optional but good practice)
+RUN chown -R appuser:appgroup /app
+
+# Switch to non-root user
+USER appuser
+
+# Example: install requirements if you have requirements.txt
+# RUN pip install -r requirements.txt
+
+# Example: set CMD to run your Flask app
+# CMD ["python", "app.py"]
+# Use the official Python image as the base
 # Install dependencies
 RUN pip install --upgrade pip
 RUN pip install flask

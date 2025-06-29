@@ -14,6 +14,7 @@ COPY . /app
 # Install dependencies
 RUN pip install --upgrade pip
 RUN pip install flask
+RUN pip install flask_cors
 
 # Expose the port the app runs on
 EXPOSE 5501

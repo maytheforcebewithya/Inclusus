@@ -15,11 +15,10 @@ COPY . /app
 
 # Copy requirements first and install deps as ROOT (default)
 COPY requirements.txt .
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
 
-# Change ownership of /app for the non-root user
-RUN chown -R appuser:appgroup /app
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt && \
+    chown -R appuser:appgroup /app
 
 # Switch to non-root user AFTER dependencies are installed
 USER appuser

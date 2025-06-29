@@ -120,5 +120,33 @@ def get_jobs():
 @app.route("/")
 def home():
     return render_template("login.html")
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+@app.route("/signup")
+def signup():
+    return render_template("signup.html")
+
+@app.route("/logout")
+def logout():
+    return render_template("logout.html")
+
+@app.route("/hacky")
+def hacky():
+    return render_template("hacky.html")
+
+@app.route("/courses")
+def courses():
+    return render_template("courses.html")
+
+@app.route("/assistance")
+def assistance():
+    return render_template("assistance.html")
+
+@app.route("/job-details")
+def job_details():
+    return render_template("job-details.html")
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5501)

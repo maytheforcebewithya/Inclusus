@@ -22,8 +22,8 @@
         communities to meaningful employment opportunities
       </p>
       <div class="auth-buttons">
-        <a href="{{ url_for('templates', filename='login.html')}}" id="login-link">Login</a>
-        <a href="{{ url_for('templates', filename='signup.html')}}" id="signup-link">Sign Up</a>
+        <a href="{{ url_for('login')}}" id="login-link">Login</a>
+        <a href="{{ url_for('signup')}}" id="signup-link">Sign Up</a>
         <button id="logout-btn" style="display: none;">Logout</button>
     </div>
     </header>
@@ -31,8 +31,8 @@
     <nav>r
       <a href="#">Home</a>
       <a href="#jobs">Jobs</a>
-      <a href="{{ url_for('templates', filename='assistance.html')}}">Assisstance Programs</a>
-      <a href="{{ url_for('templates', filename='courses.html')}}">Courses</a>
+      <a href="{{ url_for('assistance')}}">Assisstance Programs</a>
+      <a href="{{ url_for('courses') }}">Courses</a>
     </nav>
 
     <section class="hero">

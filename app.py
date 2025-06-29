@@ -113,9 +113,8 @@ jobs = [
         "description": "Review and moderate online content to ensure safety and compliance with community guidelines. Requires attention to detail and basic internet navigation skills."
     }
 ]
-
- @app.route('/api/v1/job/getjobs', methods=['GET'])
- def get_jobs():
+@app.route('/api/v1/job/getjobs', methods=['GET'])
+def get_jobs():
     return jsonify(jobs)
 
 @app.route("/")

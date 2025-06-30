@@ -39,7 +39,7 @@
             } else {
                 localStorage.setItem(username, JSON.stringify(userDetails));
                 alert("Registration successful! Please login.");
-                window.location.href = "login.html";
+                window.location.href = "{{ url_for('login') }}";
             }
         }
     </script>

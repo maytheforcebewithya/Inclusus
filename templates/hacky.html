@@ -102,7 +102,7 @@
           localStorage.removeItem("isLoggedIn");
           localStorage.removeItem("loggedInUser");
           alert("You have logged out.");
-          window.location.href = "{{ url_for('templates', filename='hacky.html')}}";
+          window.location.href = "{{ url_for('hacky')}}";
       });
   
       // Require login for all interactions
@@ -112,7 +112,7 @@
               if (target.tagName === "A" || target.tagName === "BUTTON") {
                   event.preventDefault();
                   alert("You must log in or sign up to continue.");
-                  window.location.href = "{{ url_for('templates', filename='login.html')}}";
+                  window.location.href = "{{ url_for('login')}}";
               }
           }
       });
